@@ -169,7 +169,8 @@ else:
 if 'df' in locals() and df is not None:
     # 1. 회원 유지 기간 vs 연간 지출액
     sns.jointplot(x='Length of Membership', y='Yearly Amount Spent', data=df, height=7, kind='scatter')
-    plt.suptitle('회원 유지 기간 vs 연간 지출액 (Jointplot)', y=1.02)
+    #plt.suptitle('회원 유지 기간 vs 연간 지출액 (Jointplot)', y=1.02)
+    plt.suptitle('Length of Membership vs Yearly Amount Spent (Jointplot)', y=1.02)
     plt.tight_layout()
     plt.show()
 
@@ -178,7 +179,7 @@ if 'df' in locals() and df is not None:
                   joint_kws={'scatter_kws': {'alpha': 0.5, 's': 30}},
                   marginal_kws={'color': 'green'})
     #plt.suptitle('앱 사용 시간 vs 연간 지출액 (Jointplot with Regression)', y=1.02)
-    plt.suptitle('Length of Membership vs Yearly Amount Spent (Jointplot)', y=1.02)
+    plt.suptitle('Time on App vs Yearly Amount Spent (Jointplot with Regression)', y=1.02)
     plt.tight_layout()
     plt.show()
 else:
