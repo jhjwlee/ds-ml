@@ -131,7 +131,8 @@ else:
 if 'df' in locals() and df is not None:
     plt.figure(figsize=(12, 7))
     sns.heatmap(df.isnull(), yticklabels=False, cbar=False, cmap='viridis')
-    plt.title('결측치 현황 (노란색 선이 결측치를 의미)')
+    #plt.title('결측치 현황 (노란색 선이 결측치를 의미)')
+    plt.title('Missing Values Heatmap (Yellow lines indicate missing data)')
     plt.show()
     print(f"\n원본 DataFrame의 컬럼별 결측치 개수:\n{df.isnull().sum()}")
 else:
@@ -148,7 +149,8 @@ else:
 if 'df' in locals() and df is not None:
     plt.figure(figsize=(10,8))
     sns.heatmap(df.corr(), annot=True, cmap='coolwarm', fmt=".2f", linewidths=.5)
-    plt.title('변수 간 상관계수 히트맵')
+    #plt.title('변수 간 상관계수 히트맵')
+    plt.title('Correlation Heatmap of Variables')
     plt.show()
 else:
     print("오류: df (Pandas DataFrame)가 생성되지 않았습니다. 2단계를 다시 확인해주세요.")
@@ -175,7 +177,8 @@ if 'df' in locals() and df is not None:
     sns.jointplot(x='Time on App', y='Yearly Amount Spent', data=df, kind='reg', height=7,
                   joint_kws={'scatter_kws': {'alpha': 0.5, 's': 30}},
                   marginal_kws={'color': 'green'})
-    plt.suptitle('앱 사용 시간 vs 연간 지출액 (Jointplot with Regression)', y=1.02)
+    #plt.suptitle('앱 사용 시간 vs 연간 지출액 (Jointplot with Regression)', y=1.02)
+    plt.suptitle('Length of Membership vs Yearly Amount Spent (Jointplot)', y=1.02)
     plt.tight_layout()
     plt.show()
 else:
